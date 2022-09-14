@@ -11,12 +11,12 @@
     <form action="" method = "POST" class = "class_login wrapper">
         <div class="class_radio_login">
             <div class="class_radio_insert">
-                <input type="radio" id = "id_radio_login" name = "name_radio_login">
-                <label for="id_radio_login">新規です</label>
+                <input type="radio" id = "id_radio_login1" name = "name_radio_login">
+                <label for="id_radio_login1">新規</label>
             </div>
             <div class="class_radio_update">
-                <input type="radio" id = "id_radio_login" name = "name_radio_login">
-                <label for="id_radio_login">編集de</label>
+                <input type="radio" id = "id_radio_login2" name = "name_radio_login">
+                <label for="id_radio_login2">編集</label>
             </div>
         </div>
         <div class="class_login_text_button">
