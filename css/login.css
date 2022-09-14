@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+/* -------------------- 共通部分 -------------------- */
+
+html{
+    font-size: 100%;
+}
+
+.wrapper{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.class_login{
+    text-align: center;
+    margin: 20vh auto 0;
+}
+.class_radio_login{
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+.class_login_text_button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* text-align: center; */
+    align-items: center;
+}
+
+#id_text_login{
+    font-size: 2.5rem;
+    font-style: bold;
+    border: 5px solid;
+    width: 60%;
+}
+#id_submit_login{
+    font-size: 2rem;
+    font-style: bold;
+    border: 5px solid;
+    width: 60%;
+    margin-top: 10vh;
+}
