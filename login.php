@@ -6,23 +6,58 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>ログイン画面</title>
     <link rel="stylesheet" href="css/login.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
     <form action="" method = "POST" class = "class_login wrapper">
         <div class="class_radio_login">
             <div class="class_radio_insert">
-                <input type="radio" id = "id_radio_login1" name = "name_radio_login">
+                <input type="radio" id = "id_radio_login1" name = "name_radio_login" onchange = "post_insert()" checked>
                 <label for="id_radio_login1">新規</label>
             </div>
             <div class="class_radio_update">
-                <input type="radio" id = "id_radio_login2" name = "name_radio_login">
+                <input type="radio" id = "id_radio_login2" name = "name_radio_login" onchange = "post_update()">
                 <label for="id_radio_login2">編集</label>
             </div>
         </div>
         <div class="class_login_text_button">
-            <input type="text" id = "id_text_login" name = "name_text_login">
-            <input type="submit" id = "id_submit_login" name = "name_submit_login" value = "ログイン">
+            <input type="text" id = "id_text_login" name = "name_text_login" value = "↓の投稿を押してください">
+            <input type="submit" id = "id_submit_login" name = "name_submit_login" value = "投稿">
         </div>
     </form>
 </body>
 </html>
+
+<script>
+
+    //新規（ラジオ）を押したら
+    function post_insert(){
+        document.getElementById('id_text_login').value ="↓の投稿を押してください";
+        document.getElementById('id_text_login').disabled = true;
+        document.getElementById('id_submit_login').value ="投稿";
+    }
+    //編集（ラジオ）を押したら
+    function post_update(){
+        document.getElementById('id_text_login').value ="";
+        document.getElementById('id_text_login').disabled = false;
+        document.getElementById('id_text_login').placeholder = "投稿IDを入力してください";
+        document.getElementById('id_submit_login').value ="ログイン";
+    }
+
+
+// $(function () {
+//     // ラジオボタンを選択変更したら実行
+//     $('input[name="name_radio_login"]').change(function () {
+
+//         // value値取得
+//         // var val = $(this).checked();
+//         var val2 = $('input[name="name_radio_login"]:checked').label();
+//         alert(val2);
+//         // コンソールログで確認
+//         // console.log(val);
+//       /*
+//        ここに好きな処理
+//        */
+//     });
+// });
+</script>

@@ -12,6 +12,8 @@ html{
     padding: 0 4%;
 }
 
+/* -------------------- form -------------------- */
+
 .class_login{
     text-align: center;
     margin: 20vh auto 0;
@@ -27,15 +29,22 @@ html{
     justify-content: center;
     /* text-align: center; */
     align-items: center;
+    margin-top: 2vh;
 }
 
+.class_radio_insert{
+    margin-left: 30px;
+}
+.class_radio_update{
+    margin-right: 30px;
+}
 #id_radio_login1{
-width: 25px;
-height: 25px;
+width: 1.5rem;
+height: 1.5rem;
 }
 #id_radio_login2{
-width: 25px;
-height: 25px;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 #id_text_login{
@@ -48,6 +57,6 @@ height: 25px;
     font-size: 2rem;
     font-style: bold;
     border: 5px solid;
-    width: 60%;
+    width: 62%;
     margin-top: 10vh;
 }
