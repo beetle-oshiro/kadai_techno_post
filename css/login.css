@@ -60,3 +60,6 @@ height: 1.5rem;
     width: 62%;
     margin-top: 10vh;
 }
+#id_dummy_text{
+    display: none;
+}

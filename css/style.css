@@ -59,6 +59,17 @@ html{
     /* margin-top: 1rem; */
     /* text-align: center; */
 }
+/* topへ戻るボタン */
+.class_a_top{
+    text-decoration: none;
+}
+/* top・戻るボタン */
+.class_button_top{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 60px;
+}
 
 /* -------------------- 表示エリア -------------------- */
 

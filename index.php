@@ -15,6 +15,7 @@
     exit('データベース接続失敗。' . $e->getMessage());
     }
 
+
     //登録できているかの判断
     if($_SESSION['insert_judge'] !== ""){
         switch ($_SESSION['insert_judge']) {
@@ -111,7 +112,10 @@
             </div>
     
             <textarea name="name_textarea" id="id_textarea" cols="30" rows="4"></textarea>
-            <input type="submit" name = "name_submit_post" value = "投稿">
+            <div class="class_button_top">
+                <button><a href="login.php" class = "class_a_top">TOP</a></button>
+                <input type="submit" name = "name_submit_post" value = "投稿">
+            </div>
         </form>
         
         <div class="class_reset wrapper">
@@ -120,7 +124,6 @@
             </form>
         </div>
     </div>
-
     <!-- 投稿を表示していく -->
     <section class = "class_section wrapper">
         <?php if( !empty($view_page) ){ ?>
@@ -158,4 +161,22 @@
 </body>
 
 </html>
+
+<?php
+
+    if (isset($_POST['name_dummy_text'])) {
+        $login_type = $_POST['name_dummy_text'];
+        if($login_type === "new"){
+
+        }else{
+            $login_id = $_POST['name_text_login'];
+            // echo "<script>document.getElementById('id_date').value = " . "\"" . $record["report_date"] . "\"" . ";</script>";
+            echo "<script>document.getElementById('id_text_name').value = " . "\"" . $login_id . "\"" . ";</script>"; 
+            // echo "<script>document.getElementById('id_text_name').value =  \"true\";</script>"; 
+            echo $alert = "<script>alert('$login_id');</script>";
+        }
+        // echo $alert = "<script>alert('$login_type');</script>";
+    }
+
+?>
 
