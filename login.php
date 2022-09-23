@@ -15,7 +15,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
-    <form action="index.php" method = "POST" class = "class_login wrapper">
+    <form action="index.php" method = "POST" class = "class_login wrapper" onsubmit = "return click_post()">
         <div class="class_radio_login">
             <div class="class_radio_insert">
                 <input type="radio" id = "id_radio_login1" name = "name_radio_login" value = "new" onchange = "post_insert()" checked>
@@ -27,8 +27,8 @@
             </div>
         </div>
         <div class="class_login_text_button">
-            <input type="text" id = "id_text_login" name = "name_text_login" value = "↓の投稿を押してください">
-            <input type="submit" id = "id_submit_login" name = "name_submit_login" value = "投稿">
+            <input type="text" id = "id_text_login" name = "name_text_login" value = "↓の投稿を押してください" disabled>
+            <input type="submit" id = "id_submit_login" name = "name_submit_login" value = "投稿" >
         </div>
         <input type="text" id = "id_dummy_text" name = "name_dummy_text" value = "new">
     </form>
@@ -48,13 +48,20 @@
     function post_update(){
         document.getElementById('id_text_login').value ="";
         document.getElementById('id_text_login').disabled = false;
-        document.getElementById('id_text_login').placeholder = "投稿IDを入力してください";
+        document.getElementById('id_text_login').placeholder = "投稿者名を入力";
         document.getElementById('id_submit_login').value ="ログイン";
         document.getElementById('id_dummy_text').value = $("input[name='name_radio_login']:checked").val();
     }
 
-
-// $(function () {
+    function click_post(){
+        var post_type = document.getElementById('id_dummy_text').value;
+        var post_id = document.getElementById('id_text_login').value;
+        if(post_type !== "new" && post_id !== "↓の投稿を押してください" && post_id === ""){
+            alert("投稿者名を入力してください");
+            return false;
+        }
+    }
+// $(function () {s
 //     // ラジオボタンを選択変更したら実行
 //     $('input[name="name_radio_login"]').change(function () {
 

@@ -84,7 +84,7 @@
     //SELECT(投稿情報を表示)
     $sql = "SELECT * FROM post_tables";
     $select_posts = $pdo->query($sql);
-    $pdo = null;
+    // $pdo = null;
     
 ?>
 
@@ -164,19 +164,30 @@
 
 <?php
 
+    // 新規か編集かの判断をする
     if (isset($_POST['name_dummy_text'])) {
         $login_type = $_POST['name_dummy_text'];
         if($login_type === "new"){
-
         }else{
-            $login_id = $_POST['name_text_login'];
-            // echo "<script>document.getElementById('id_date').value = " . "\"" . $record["report_date"] . "\"" . ";</script>";
-            echo "<script>document.getElementById('id_text_name').value = " . "\"" . $login_id . "\"" . ";</script>"; 
-            // echo "<script>document.getElementById('id_text_name').value =  \"true\";</script>"; 
-            echo $alert = "<script>alert('$login_id');</script>";
+            if (isset($_POST['name_text_login'])){
+                $post_update_name = $_POST['name_text_login'];
+                $sql = "SELECT * FROM post_tables WHERE post_name = '$post_update_name'";
+                $select_posts = $pdo->query($sql);
+                foreach($select_posts as $record){
+                    $test = $record['post_id'];
+                    $post_name = $record['post_name'];
+                    echo "<script>document.getElementById('id_text_name').value = " . "\"" . $post_name . "\"" . ";</script>"; 
+                }
+                if(!isset($post_name)){
+                    echo $alert = "<script>alert(\"その投稿者名では登録されていません\");</script>";
+                }
+            }else{
+                echo $alert = "<script>alert(\"ここまでもきてる\");</script>";
+            }
         }
         // echo $alert = "<script>alert('$login_type');</script>";
     }
 
+    $pdo = null;
 ?>
 
