@@ -72,9 +72,9 @@
             
             <div class="class_insert_area">
                 <!-- <p>投稿者ID：<input type="text" id = "id_p_id" name = "name_text_id_post" value = ""></p> -->
-                <p>投稿者名：<input type="text" id = "id_p_name" name = "name_p_name" value = "<?php echo $name; ?>"></p>
+                <p>投稿者名：<input type="text" id = "id_p_name" name = "name_p_name" value = "<?php echo $name; ?>" readonly></p>
                 <p>タイトル：<input type="text" id = "id_p_title" name = "name_p_title" value = "<?php echo $title; ?>"></p>
-                <p>投稿日時：<input type="text" id = "id_p_datetime" name = "name_p_datetime" value = "<?php echo $datetime; ?>"></p>
+                <p>投稿日時：<input type="text" id = "id_p_datetime" name = "name_p_datetime" value = "<?php echo $datetime; ?>" readonly></p>
                 <p>内　容　：<input type="text" id = "id_p_text" name = "name_p_text" value = "<?php echo $text; ?>"></p>
             </div>
         </form>

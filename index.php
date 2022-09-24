@@ -128,7 +128,7 @@
     <section class = "class_section wrapper">
         <?php if( !empty($view_page) ){ ?>
             <?php foreach( $view_page as $value ){ ?>
-                <form action="delete.php"  id = "id_form_post" method = "POST">
+                <form action="delete.php"  id = "id_form_post" method = "POST" name = "name_form_display">
                     <article class = "class_article_data">
                         <input type="text" id = "id_dummy_text_id" name = "name_dummy_text_id" value = <?php echo $value[0]; ?>>
                         <input type="text" id = "id_dummy_text_name" name = "name_dummy_text_name" value = <?php echo $value[1]; ?>>
@@ -141,7 +141,15 @@
                         　　タイトル：<?php echo $value[2]; ?>
                         　　<?php echo $value[3]; ?>
                         <p><?php echo $value[4]; ?></p>
-                        <p class = "class_p_delete" ><input type="submit" id = "id_submit_delete" name = "name_submit_delete" value = "削除"></p>
+                        <div class="class_each_button">
+                            <?php
+                                if($_POST['name_text_login'] === $value[1]){
+                                    $test_name = $value[1];
+                                    echo "<p class = \"class_p_update\" ><input type=\"submit\" id = \"id_submit_update\" name = \"name_submit_update\" onclick = \"click_update()\" value = \"編集\"></p>";
+                                }
+                            ?>
+                            <p class = "class_p_delete" ><input type="submit" id = "id_submit_delete" name = "name_submit_delete" value = "削除"></p>
+                        </div>
                     </article>
                 </form>
             <?php }; ?>
@@ -162,8 +170,26 @@
 
 </html>
 
-<?php
+<script>
 
+    //編集ページに飛ぶようにactionの行先を変更
+    function click_update(){
+        alert("ラジオ");
+        var form_edit = document.getElementById('id_form_post');
+        alert(form_edit.id);
+        // var form_edit = document.getElementById('id_form_post');
+        form_edit.action = 'update.php';
+    }
+
+    // //削除ページに飛ぶようにactionの行先を変更
+    // function click_delete(){
+    //     var form_edit = document.getElementById('id_form_post');
+    //     form_edit.action = 'delete.php';
+    // }
+
+</script>
+
+<?php
     // 新規か編集かの判断をする
     if (isset($_POST['name_dummy_text'])) {
         $login_type = $_POST['name_dummy_text'];
@@ -178,11 +204,13 @@
                     $post_name = $record['post_name'];
                     echo "<script>document.getElementById('id_text_name').value = " . "\"" . $post_name . "\"" . ";</script>"; 
                 }
-                if(!isset($post_name)){
+                if(!isset($post_name)){     //投稿者名が登録されていなかったら
                     echo $alert = "<script>alert(\"その投稿者名では登録されていません\");</script>";
+                    //ログインページに移動
+                    echo "<script>window.location = 'https://beetle45046.sakura.ne.jp/kadai_techno/login.php';</script>"; 
                 }
             }else{
-                echo $alert = "<script>alert(\"ここまでもきてる\");</script>";
+                echo $alert = "<script>alert(\"投稿者名を入力してください\");</script>";
             }
         }
         // echo $alert = "<script>alert('$login_type');</script>";

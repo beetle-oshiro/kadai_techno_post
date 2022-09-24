@@ -24,6 +24,8 @@ html{
     margin: 0 auto;
     /* padding: 0 4%; */
 }
+
+/* 投稿フォーム */
 .class_form_postarea{
     display: flex;
     justify-content: space-around;
@@ -47,9 +49,9 @@ html{
 
 
 /* 削除ボタン */
-.class_p_delete{
+/* .class_p_delete{
     text-align: right;
-}
+} */
 
 /* 仮リセットボタン */
 .class_submit_reset{
@@ -85,6 +87,13 @@ height: 60px;
     padding: 1%;
 }
 
+/* それぞれの削除ボタンと編集ボタン */
+.class_each_button{
+    display: flex;
+    flex-direction: column;
+    /* width: 50px; */
+    text-align: right;
+}
 /* ダミーテキストボックス */
 #id_dummy_text_id{
     display: none;

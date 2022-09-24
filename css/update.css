@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+/* -------------------- 共通部分 -------------------- */
+
+html{
+    font-size: 100%;
+}
+
+.wrapper{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+/* -------------------- 決定・戻るボタン -------------------- */
+
+.class_submit_dlete_data{
+    width: 50%;
+    font-size: 1.6rem;
+}
+.class_submit_back_data{
+    width: 50%;
+    font-size: 1.6rem;
+}
+
+/* -------------------- 表示エリア -------------------- */
+
+.class_delete_data{
+    margin-top: 3rem;
+}
+.class_delete_data p{
+    font-size: 1.6rem;    
+}
+
+.class_delete_area{
+    background-color: rgb(246, 167, 183);
+    padding: 1%;
+}
+.class_judge_delete{
+    width: 100%;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+/* 各テキストボックス */
+
+#id_p_id{
+    border: none;
+    font-size: 1.6rem;
+}
+#id_p_name{
+    border: none;
+    font-size: 1.6rem;
+}
+#id_p_title{
+    border: none;
+    font-size: 1.6rem;
+}
+#id_p_datetime{
+    border: none;
+    font-size: 1.6rem;
+}
+#id_p_text{
+    border: none;
+    font-size: 1.6rem;
+}
+
