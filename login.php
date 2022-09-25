@@ -2,6 +2,7 @@
     session_start();            //セッションスタート
 
     $_SESSION['login_type'] = "new";    //ラジオボタンは新規でスタートする
+    $_SESSION['update_post_name'] = ""; //投稿者名をリセット
 ?>
 
 <!DOCTYPE html>

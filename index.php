@@ -15,8 +15,8 @@
     exit('データベース接続失敗。' . $e->getMessage());
     }
 
-    $testtest = $_SESSION['login_type'];
-    echo $alert = "<script>alert('$testtest');</script>";
+    // $testtest = $_SESSION['login_type'];
+    // echo $alert = "<script>alert('$testtest');</script>";
 
     //$_SESSION['update_post_name']に投稿者名をストックする
     if (isset($_POST['name_text_login'])){
@@ -152,7 +152,6 @@
                         <div class="class_each_button">
                             <?php
                                 if($_SESSION['update_post_name'] === $value[1]){
-                                    $test_name = $value[1];
                                     echo "<p class = \"class_p_update\" ><input type=\"submit\" id = \"id_submit_update\" name = \"name_submit_update\" onclick = \"click_update()\" value = \"編集\"></p>";
                                 }
                             ?>
@@ -217,8 +216,8 @@
                     echo "<script>window.location = 'https://beetle45046.sakura.ne.jp/kadai_techno/login.php';</script>"; 
                 }
             }else{
-                $testtest = $_SESSION['login_type'];
-                echo $alert = "<script>alert('$testtest');</script>";
+                // $testtest = $_SESSION['login_type'];
+                // echo $alert = "<script>alert('$testtest');</script>";
                 echo $alert = "<script>alert(\"投稿者名を入力してください\");</script>";
             }
         }
