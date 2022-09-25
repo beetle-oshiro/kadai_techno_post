@@ -15,6 +15,14 @@
     exit('データベース接続失敗。' . $e->getMessage());
     }
 
+    $testtest = $_SESSION['login_type'];
+    echo $alert = "<script>alert('$testtest');</script>";
+
+    //$_SESSION['update_post_name']に投稿者名をストックする
+    if (isset($_POST['name_text_login'])){
+        $_SESSION['update_post_name'] = $_POST['name_text_login'];
+    }
+    
 
     //登録できているかの判断
     if($_SESSION['insert_judge'] !== ""){
@@ -143,7 +151,7 @@
                         <p><?php echo $value[4]; ?></p>
                         <div class="class_each_button">
                             <?php
-                                if($_POST['name_text_login'] === $value[1]){
+                                if($_SESSION['update_post_name'] === $value[1]){
                                     $test_name = $value[1];
                                     echo "<p class = \"class_p_update\" ><input type=\"submit\" id = \"id_submit_update\" name = \"name_submit_update\" onclick = \"click_update()\" value = \"編集\"></p>";
                                 }
@@ -174,7 +182,6 @@
 
     //編集ページに飛ぶようにactionの行先を変更
     function click_update(){
-        alert("ラジオ");
         var form_edit = document.getElementById('id_form_post');
         alert(form_edit.id);
         // var form_edit = document.getElementById('id_form_post');
@@ -192,8 +199,8 @@
 <?php
     // 新規か編集かの判断をする
     if (isset($_POST['name_dummy_text'])) {
-        $login_type = $_POST['name_dummy_text'];
-        if($login_type === "new"){
+        // $login_type = $_POST['name_dummy_text'];
+        if($_SESSION['login_type'] === "new"){
         }else{
             if (isset($_POST['name_text_login'])){
                 $post_update_name = $_POST['name_text_login'];
@@ -210,6 +217,8 @@
                     echo "<script>window.location = 'https://beetle45046.sakura.ne.jp/kadai_techno/login.php';</script>"; 
                 }
             }else{
+                $testtest = $_SESSION['login_type'];
+                echo $alert = "<script>alert('$testtest');</script>";
                 echo $alert = "<script>alert(\"投稿者名を入力してください\");</script>";
             }
         }

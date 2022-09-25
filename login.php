@@ -43,6 +43,9 @@
         document.getElementById('id_text_login').disabled = true;
         document.getElementById('id_submit_login').value ="投稿";
         document.getElementById('id_dummy_text').value = $("input[name='name_radio_login']:checked").val();
+        <?php
+            $_SESSION['login_type'] = "new";
+        ?>
     }
     //編集（ラジオ）を押したら
     function post_update(){
@@ -51,6 +54,9 @@
         document.getElementById('id_text_login').placeholder = "投稿者名を入力";
         document.getElementById('id_submit_login').value ="ログイン";
         document.getElementById('id_dummy_text').value = $("input[name='name_radio_login']:checked").val();
+        <?php
+            $_SESSION['login_type'] = "edit";
+        ?>
     }
 
     function click_post(){
